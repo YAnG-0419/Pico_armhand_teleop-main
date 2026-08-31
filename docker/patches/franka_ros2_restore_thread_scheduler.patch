@@ -1,0 +1,42 @@
+diff --git a/franka_hardware/src/robot.cpp b/franka_hardware/src/robot.cpp
+index b1eca46..194e9e4 100644
+--- a/franka_hardware/src/robot.cpp
++++ b/franka_hardware/src/robot.cpp
+@@ -14,6 +14,8 @@
+
+ #include <cassert>
+ #include <mutex>
++#include <pthread.h>
++#include <system_error>
+
+ #include <franka/control_tools.h>
+ #include <franka/rate_limiting.h>
+@@ -33,6 +35,15 @@ Robot::Robot(std::unique_ptr<franka::Robot> robot, std::unique_ptr<Model> model)
+     : robot_(std::move(robot)), franka_hardware_model_(std::move(model)) {}
+
+ Robot::Robot(const std::string& robot_ip, const rclcpp::Logger& logger) {
++  int original_policy = 0;
++  sched_param original_parameters{};
++  const int get_scheduler_result =
++      pthread_getschedparam(pthread_self(), &original_policy, &original_parameters);
++  if (get_scheduler_result != 0) {
++    throw std::system_error(get_scheduler_result, std::generic_category(),
++                            "Could not read the ROS thread scheduling policy");
++  }
++
+   franka::RealtimeConfig rt_config = franka::RealtimeConfig::kEnforce;
+   if (!franka::hasRealtimeKernel()) {
+     rt_config = franka::RealtimeConfig::kIgnore;
+@@ -45,6 +56,12 @@ Robot::Robot(const std::string& robot_ip, const rclcpp::Logger& logger) {
+                 "installation_linux.html#setting-up-the-real-time-kernel\n");
+   }
+   robot_ = std::make_unique<franka::Robot>(robot_ip, rt_config);
++  const int restore_scheduler_result =
++      pthread_setschedparam(pthread_self(), original_policy, &original_parameters);
++  if (restore_scheduler_result != 0) {
++    throw std::system_error(restore_scheduler_result, std::generic_category(),
++                            "Could not restore the ROS thread scheduling policy");
++  }
+   model_ = std::make_unique<franka::Model>(robot_->loadModel());
+   franka_hardware_model_ = std::make_unique<Model>(model_.get());
+ }

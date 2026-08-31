@@ -1,0 +1,26 @@
+# Host-side environment for PICO arm tracking and MANUS-to-Wuji retargeting.
+# Repository-local packages and native SDKs are installed by ops/setup.
+name: pico-armhand-teleop
+
+channels:
+  # Use the canonical channel URL so a workstation-level custom_channels
+  # mirror cannot silently redirect the reproducible setup.
+  - https://conda.anaconda.org/conda-forge
+  - nodefaults
+
+dependencies:
+  - python=3.10
+  - pip
+  - setuptools
+  - wheel
+  - pybind11
+  - pyyaml
+  - scipy
+  - pytest
+  - pip:
+      # Wheels avoid pulling the full Conda Qt/LLVM toolchain.  pin-pink (from
+      # adapters/pico) supplies the compatible `pin`/Pinocchio dependency.
+      - nlopt>=2.7
+      - PySide6>=6.7,<7
+      - wuji-sdk>=0.10.0
+      - wujihandpy>=1.8.0

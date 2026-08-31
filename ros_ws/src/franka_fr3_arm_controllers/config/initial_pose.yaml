@@ -1,0 +1,36 @@
+captured_utc: '2026-08-31T02:50:32.424596+00:00'
+initial_pose:
+  left:
+    joint_names:
+    - left_fr3_joint1
+    - left_fr3_joint2
+    - left_fr3_joint3
+    - left_fr3_joint4
+    - left_fr3_joint5
+    - left_fr3_joint6
+    - left_fr3_joint7
+    positions:
+    - -0.6309875845909119
+    - 1.1656414270401
+    - -0.6934998035430908
+    - -1.5557557344436646
+    - -0.17144395411014557
+    - 2.5917551517486572
+    - -0.7089794874191284
+  right:
+    joint_names:
+    - right_fr3_joint1
+    - right_fr3_joint2
+    - right_fr3_joint3
+    - right_fr3_joint4
+    - right_fr3_joint5
+    - right_fr3_joint6
+    - right_fr3_joint7
+    positions:
+    - 0.3114239573478699
+    - 0.9471405744552612
+    - 0.4740247130393982
+    - -1.6515581607818604
+    - 0.5040758848190308
+    - 2.554032564163208
+    - -0.8689905405044556

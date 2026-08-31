@@ -1,0 +1,51 @@
+/**:
+  controller_manager:
+    ros__parameters:
+      update_rate: 1001  # Hz
+
+      joint_impedance_controller:
+        type: franka_fr3_arm_controllers/JointImpedanceController
+
+      joint_state_broadcaster:
+        type: joint_state_broadcaster/JointStateBroadcaster
+
+      franka_robot_state_broadcaster:
+        type: franka_robot_state_broadcaster/FrankaRobotStateBroadcaster
+
+  joint_impedance_controller:
+    ros__parameters:
+      arm_id: fr3
+      command_timeout: 0.25
+      max_initial_target_delta: 0.35
+      k_alpha: 0.99
+      # franka_ros2 example gains. The earlier halved set (312/260/260/260/
+      # 104/52/26, d 23/23/23/11.5/11.5/11.5/5.7) left a 20-40 mrad friction
+      # deadband on the distal joints, measured as stick-slip in the
+      # 2026-07-26 jitter recordings.
+      k_gains:
+        - 600.0
+        - 600.0
+        - 600.0
+        - 600.0
+        - 250.0
+        - 150.0
+        - 50.0
+      d_gains:
+        - 30.0
+        - 30.0
+        - 30.0
+        - 25.0
+        - 25.0
+        - 25.0
+        - 15.0
+
+  # 30 Hz hid everything above 15 Hz from the teleop diagnostics (q_meas
+  # aliasing, invisible stick-slip transients); 200 Hz covers the host's
+  # 100 Hz loop with margin.
+  joint_state_broadcaster:
+    ros__parameters:
+      update_rate: 200
+
+  franka_robot_state_broadcaster:
+    ros__parameters:
+      update_rate: 200

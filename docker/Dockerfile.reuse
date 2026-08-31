@@ -1,0 +1,9 @@
+ARG SOURCE_IMAGE=franka-upper-body-teleop:latest
+FROM ${SOURCE_IMAGE}
+
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+WORKDIR /workspace/pico_armhand_teleop
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["bash"]

@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<robot name="mounted_dual_fr3">
+  <link name="lychee_root"/>
+
+  <link name="left_fr3v2_link0"/>
+  <!--
+    Measured world-to-base calibration for the remounted workcell.
+    Do not replace this with the legacy dual_arm_45 CAD transform when
+    regenerating the combined model.
+  -->
+  <joint name="left_mount" type="fixed">
+    <parent link="lychee_root"/>
+    <child link="left_fr3v2_link0"/>
+    <origin xyz="0.013079894 0.100675805 -0.005974552" rpy="-0.78850572 0.02334617 0.01037711"/>
+  </joint>
+  <link name="left_fr3v2_link1"/>
+  <joint name="left_fr3v2_joint1" type="revolute">
+    <parent link="left_fr3v2_link0"/><child link="left_fr3v2_link1"/>
+    <origin xyz="0 0 0.333" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="-2.9007400167" upper="2.9007400167" effort="87" velocity="2.62"/>
+  </joint>
+  <link name="left_fr3v2_link2"/>
+  <joint name="left_fr3v2_joint2" type="revolute">
+    <parent link="left_fr3v2_link1"/><child link="left_fr3v2_link2"/>
+    <origin xyz="0 0 0" rpy="-1.5707963268 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="-1.8360900167" upper="1.8360900167" effort="87" velocity="2.62"/>
+  </joint>
+  <link name="left_fr3v2_link3"/>
+  <joint name="left_fr3v2_joint3" type="revolute">
+    <parent link="left_fr3v2_link2"/><child link="left_fr3v2_link3"/>
+    <origin xyz="0 -0.316 0" rpy="1.5707963268 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="-2.9007400167" upper="2.9007400167" effort="87" velocity="2.62"/>
+  </joint>
+  <link name="left_fr3v2_link4"/>
+  <joint name="left_fr3v2_joint4" type="revolute">
+    <parent link="left_fr3v2_link3"/><child link="left_fr3v2_link4"/>
+    <origin xyz="0.0825 0 0" rpy="1.5707963268 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="-3.0770200167" upper="-0.1169370833" effort="87" velocity="2.62"/>
+  </joint>
+  <link name="left_fr3v2_link5"/>
+  <joint name="left_fr3v2_joint5" type="revolute">
+    <parent link="left_fr3v2_link4"/><child link="left_fr3v2_link5"/>
+    <origin xyz="-0.0825 0.384 0" rpy="-1.5707963268 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="-2.87630335" upper="2.87630335" effort="12" velocity="5.26"/>
+  </joint>
+  <link name="left_fr3v2_link6"/>
+  <joint name="left_fr3v2_joint6" type="revolute">
+    <parent link="left_fr3v2_link5"/><child link="left_fr3v2_link6"/>
+    <origin xyz="0 0 0" rpy="1.5707963268 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="0.43982265" upper="4.62163335" effort="12" velocity="4.18"/>
+  </joint>
+  <link name="left_fr3v2_link7"/>
+  <joint name="left_fr3v2_joint7" type="revolute">
+    <parent link="left_fr3v2_link6"/><child link="left_fr3v2_link7"/>
+    <origin xyz="0.088 0 0" rpy="1.5707963268 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="-3.05083335" upper="3.05083335" effort="12" velocity="5.26"/>
+  </joint>
+  <link name="left_fr3v2_link8"/>
+  <joint name="left_fr3v2_joint8" type="fixed">
+    <parent link="left_fr3v2_link7"/><child link="left_fr3v2_link8"/>
+    <origin xyz="0 0 0.107" rpy="0 0 0"/>
+  </joint>
+
+  <link name="right_fr3v2_link0"/>
+  <joint name="right_mount" type="fixed">
+    <parent link="lychee_root"/>
+    <child link="right_fr3v2_link0"/>
+    <origin xyz="-0.013079894 -0.100675805 0.005974552" rpy="0.76133216 0.03792674 -0.01038175"/>
+  </joint>
+  <link name="right_fr3v2_link1"/>
+  <joint name="right_fr3v2_joint1" type="revolute">
+    <parent link="right_fr3v2_link0"/><child link="right_fr3v2_link1"/>
+    <origin xyz="0 0 0.333" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="-2.9007400167" upper="2.9007400167" effort="87" velocity="2.62"/>
+  </joint>
+  <link name="right_fr3v2_link2"/>
+  <joint name="right_fr3v2_joint2" type="revolute">
+    <parent link="right_fr3v2_link1"/><child link="right_fr3v2_link2"/>
+    <origin xyz="0 0 0" rpy="-1.5707963268 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="-1.8360900167" upper="1.8360900167" effort="87" velocity="2.62"/>
+  </joint>
+  <link name="right_fr3v2_link3"/>
+  <joint name="right_fr3v2_joint3" type="revolute">
+    <parent link="right_fr3v2_link2"/><child link="right_fr3v2_link3"/>
+    <origin xyz="0 -0.316 0" rpy="1.5707963268 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="-2.9007400167" upper="2.9007400167" effort="87" velocity="2.62"/>
+  </joint>
+  <link name="right_fr3v2_link4"/>
+  <joint name="right_fr3v2_joint4" type="revolute">
+    <parent link="right_fr3v2_link3"/><child link="right_fr3v2_link4"/>
+    <origin xyz="0.0825 0 0" rpy="1.5707963268 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="-3.0770200167" upper="-0.1169370833" effort="87" velocity="2.62"/>
+  </joint>
+  <link name="right_fr3v2_link5"/>
+  <joint name="right_fr3v2_joint5" type="revolute">
+    <parent link="right_fr3v2_link4"/><child link="right_fr3v2_link5"/>
+    <origin xyz="-0.0825 0.384 0" rpy="-1.5707963268 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="-2.87630335" upper="2.87630335" effort="12" velocity="5.26"/>
+  </joint>
+  <link name="right_fr3v2_link6"/>
+  <joint name="right_fr3v2_joint6" type="revolute">
+    <parent link="right_fr3v2_link5"/><child link="right_fr3v2_link6"/>
+    <origin xyz="0 0 0" rpy="1.5707963268 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="0.43982265" upper="4.62163335" effort="12" velocity="4.18"/>
+  </joint>
+  <link name="right_fr3v2_link7"/>
+  <joint name="right_fr3v2_joint7" type="revolute">
+    <parent link="right_fr3v2_link6"/><child link="right_fr3v2_link7"/>
+    <origin xyz="0.088 0 0" rpy="1.5707963268 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="-3.05083335" upper="3.05083335" effort="12" velocity="5.26"/>
+  </joint>
+  <link name="right_fr3v2_link8"/>
+  <joint name="right_fr3v2_joint8" type="fixed">
+    <parent link="right_fr3v2_link7"/><child link="right_fr3v2_link8"/>
+    <origin xyz="0 0 0.107" rpy="0 0 0"/>
+  </joint>
+</robot>

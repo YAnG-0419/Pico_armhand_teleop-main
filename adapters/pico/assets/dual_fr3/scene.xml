@@ -1,0 +1,588 @@
+<?xml version="1.0"?>
+<mujoco model="mounted_dual_fr3">
+  <!--
+    FR3v2 meshes and inertial parameters are derived from Franka Robotics
+    franka_description@4143b50061f8c98fd1dc06b64dc34433301f735a.
+    Collision parts were generated with CoACD 1.0.11 in real-metric mode,
+    0.002 m target concavity, at most 16 hulls and at most 64 vertices per hull.
+    The imported assets remain subject to FRANKA_DESCRIPTION_LICENSE and
+    FRANKA_DESCRIPTION_NOTICE in this directory.
+  -->
+  <compiler angle="radian" autolimits="true" meshdir="meshes/fr3v2"/>
+  <option timestep="0.002" gravity="0 0 -9.81" integrator="implicitfast">
+    <flag contact="enable" gravity="enable"/>
+  </option>
+  <default>
+    <joint damping="0.003" frictionloss="0.2" limited="true"/>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2"/>
+    </default>
+    <default class="collision">
+      <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0 0 0 0" friction="0.8 0.1 0.1"/>
+    </default>
+    <default class="strong_actuator">
+      <position kp="7000" kv="120" forcelimited="true" forcerange="-87 87"/>
+    </default>
+    <default class="wrist_actuator">
+      <position kp="7000" kv="60" forcelimited="true" forcerange="-12 12"/>
+    </default>
+    <default class="frame_axis">
+      <geom type="capsule" size="0.004" contype="0" conaffinity="0" group="0"/>
+    </default>
+  </default>
+  <visual>
+    <headlight ambient="0.4 0.4 0.4" diffuse="0.8 0.8 0.8"/>
+  </visual>
+  <asset>
+    <material name="floor" rgba="0.22 0.24 0.28 1"/>
+    <material name="left_arm" rgba="0.55 0.68 0.82 1"/>
+    <material name="right_arm" rgba="0.82 0.62 0.45 1"/>
+    <mesh name="fr3v2_link0" file="collision/link0.stl"/>
+    <mesh name="fr3v2_link1" file="collision/link1.stl"/>
+    <mesh name="fr3v2_link2" file="collision/link2.stl"/>
+    <mesh name="fr3v2_link3" file="collision/link3.stl"/>
+    <mesh name="fr3v2_link4" file="collision/link4.stl"/>
+    <mesh name="fr3v2_link5" file="collision/link5.stl"/>
+    <mesh name="fr3v2_link6" file="collision/link6.stl"/>
+    <mesh name="fr3v2_link7" file="collision/link7.stl"/>
+    <mesh name="fr3v2_link0_part00" file="convex/link0_part00.obj"/>
+    <mesh name="fr3v2_link0_part01" file="convex/link0_part01.obj"/>
+    <mesh name="fr3v2_link0_part02" file="convex/link0_part02.obj"/>
+    <mesh name="fr3v2_link0_part03" file="convex/link0_part03.obj"/>
+    <mesh name="fr3v2_link0_part04" file="convex/link0_part04.obj"/>
+    <mesh name="fr3v2_link0_part05" file="convex/link0_part05.obj"/>
+    <mesh name="fr3v2_link0_part06" file="convex/link0_part06.obj"/>
+    <mesh name="fr3v2_link0_part07" file="convex/link0_part07.obj"/>
+    <mesh name="fr3v2_link0_part08" file="convex/link0_part08.obj"/>
+    <mesh name="fr3v2_link0_part09" file="convex/link0_part09.obj"/>
+    <mesh name="fr3v2_link0_part10" file="convex/link0_part10.obj"/>
+    <mesh name="fr3v2_link0_part11" file="convex/link0_part11.obj"/>
+    <mesh name="fr3v2_link0_part12" file="convex/link0_part12.obj"/>
+    <mesh name="fr3v2_link0_part13" file="convex/link0_part13.obj"/>
+    <mesh name="fr3v2_link0_part14" file="convex/link0_part14.obj"/>
+    <mesh name="fr3v2_link0_part15" file="convex/link0_part15.obj"/>
+    <mesh name="fr3v2_link1_part00" file="convex/link1_part00.obj"/>
+    <mesh name="fr3v2_link1_part01" file="convex/link1_part01.obj"/>
+    <mesh name="fr3v2_link1_part02" file="convex/link1_part02.obj"/>
+    <mesh name="fr3v2_link1_part03" file="convex/link1_part03.obj"/>
+    <mesh name="fr3v2_link1_part04" file="convex/link1_part04.obj"/>
+    <mesh name="fr3v2_link1_part05" file="convex/link1_part05.obj"/>
+    <mesh name="fr3v2_link1_part06" file="convex/link1_part06.obj"/>
+    <mesh name="fr3v2_link1_part07" file="convex/link1_part07.obj"/>
+    <mesh name="fr3v2_link1_part08" file="convex/link1_part08.obj"/>
+    <mesh name="fr3v2_link1_part09" file="convex/link1_part09.obj"/>
+    <mesh name="fr3v2_link1_part10" file="convex/link1_part10.obj"/>
+    <mesh name="fr3v2_link1_part11" file="convex/link1_part11.obj"/>
+    <mesh name="fr3v2_link1_part12" file="convex/link1_part12.obj"/>
+    <mesh name="fr3v2_link1_part13" file="convex/link1_part13.obj"/>
+    <mesh name="fr3v2_link1_part14" file="convex/link1_part14.obj"/>
+    <mesh name="fr3v2_link1_part15" file="convex/link1_part15.obj"/>
+    <mesh name="fr3v2_link2_part00" file="convex/link2_part00.obj"/>
+    <mesh name="fr3v2_link2_part01" file="convex/link2_part01.obj"/>
+    <mesh name="fr3v2_link2_part02" file="convex/link2_part02.obj"/>
+    <mesh name="fr3v2_link2_part03" file="convex/link2_part03.obj"/>
+    <mesh name="fr3v2_link2_part04" file="convex/link2_part04.obj"/>
+    <mesh name="fr3v2_link2_part05" file="convex/link2_part05.obj"/>
+    <mesh name="fr3v2_link2_part06" file="convex/link2_part06.obj"/>
+    <mesh name="fr3v2_link2_part07" file="convex/link2_part07.obj"/>
+    <mesh name="fr3v2_link2_part08" file="convex/link2_part08.obj"/>
+    <mesh name="fr3v2_link2_part09" file="convex/link2_part09.obj"/>
+    <mesh name="fr3v2_link2_part10" file="convex/link2_part10.obj"/>
+    <mesh name="fr3v2_link2_part11" file="convex/link2_part11.obj"/>
+    <mesh name="fr3v2_link2_part12" file="convex/link2_part12.obj"/>
+    <mesh name="fr3v2_link2_part13" file="convex/link2_part13.obj"/>
+    <mesh name="fr3v2_link2_part14" file="convex/link2_part14.obj"/>
+    <mesh name="fr3v2_link2_part15" file="convex/link2_part15.obj"/>
+    <mesh name="fr3v2_link3_part00" file="convex/link3_part00.obj"/>
+    <mesh name="fr3v2_link3_part01" file="convex/link3_part01.obj"/>
+    <mesh name="fr3v2_link3_part02" file="convex/link3_part02.obj"/>
+    <mesh name="fr3v2_link3_part03" file="convex/link3_part03.obj"/>
+    <mesh name="fr3v2_link3_part04" file="convex/link3_part04.obj"/>
+    <mesh name="fr3v2_link3_part05" file="convex/link3_part05.obj"/>
+    <mesh name="fr3v2_link3_part06" file="convex/link3_part06.obj"/>
+    <mesh name="fr3v2_link3_part07" file="convex/link3_part07.obj"/>
+    <mesh name="fr3v2_link3_part08" file="convex/link3_part08.obj"/>
+    <mesh name="fr3v2_link3_part09" file="convex/link3_part09.obj"/>
+    <mesh name="fr3v2_link3_part10" file="convex/link3_part10.obj"/>
+    <mesh name="fr3v2_link3_part11" file="convex/link3_part11.obj"/>
+    <mesh name="fr3v2_link3_part12" file="convex/link3_part12.obj"/>
+    <mesh name="fr3v2_link3_part13" file="convex/link3_part13.obj"/>
+    <mesh name="fr3v2_link3_part14" file="convex/link3_part14.obj"/>
+    <mesh name="fr3v2_link3_part15" file="convex/link3_part15.obj"/>
+    <mesh name="fr3v2_link4_part00" file="convex/link4_part00.obj"/>
+    <mesh name="fr3v2_link4_part01" file="convex/link4_part01.obj"/>
+    <mesh name="fr3v2_link4_part02" file="convex/link4_part02.obj"/>
+    <mesh name="fr3v2_link4_part03" file="convex/link4_part03.obj"/>
+    <mesh name="fr3v2_link4_part04" file="convex/link4_part04.obj"/>
+    <mesh name="fr3v2_link4_part05" file="convex/link4_part05.obj"/>
+    <mesh name="fr3v2_link4_part06" file="convex/link4_part06.obj"/>
+    <mesh name="fr3v2_link4_part07" file="convex/link4_part07.obj"/>
+    <mesh name="fr3v2_link4_part08" file="convex/link4_part08.obj"/>
+    <mesh name="fr3v2_link4_part09" file="convex/link4_part09.obj"/>
+    <mesh name="fr3v2_link4_part10" file="convex/link4_part10.obj"/>
+    <mesh name="fr3v2_link4_part11" file="convex/link4_part11.obj"/>
+    <mesh name="fr3v2_link4_part12" file="convex/link4_part12.obj"/>
+    <mesh name="fr3v2_link4_part13" file="convex/link4_part13.obj"/>
+    <mesh name="fr3v2_link4_part14" file="convex/link4_part14.obj"/>
+    <mesh name="fr3v2_link4_part15" file="convex/link4_part15.obj"/>
+    <mesh name="fr3v2_link5_part00" file="convex/link5_part00.obj"/>
+    <mesh name="fr3v2_link5_part01" file="convex/link5_part01.obj"/>
+    <mesh name="fr3v2_link5_part02" file="convex/link5_part02.obj"/>
+    <mesh name="fr3v2_link5_part03" file="convex/link5_part03.obj"/>
+    <mesh name="fr3v2_link5_part04" file="convex/link5_part04.obj"/>
+    <mesh name="fr3v2_link5_part05" file="convex/link5_part05.obj"/>
+    <mesh name="fr3v2_link5_part06" file="convex/link5_part06.obj"/>
+    <mesh name="fr3v2_link5_part07" file="convex/link5_part07.obj"/>
+    <mesh name="fr3v2_link5_part08" file="convex/link5_part08.obj"/>
+    <mesh name="fr3v2_link5_part09" file="convex/link5_part09.obj"/>
+    <mesh name="fr3v2_link5_part10" file="convex/link5_part10.obj"/>
+    <mesh name="fr3v2_link5_part11" file="convex/link5_part11.obj"/>
+    <mesh name="fr3v2_link5_part12" file="convex/link5_part12.obj"/>
+    <mesh name="fr3v2_link5_part13" file="convex/link5_part13.obj"/>
+    <mesh name="fr3v2_link5_part14" file="convex/link5_part14.obj"/>
+    <mesh name="fr3v2_link5_part15" file="convex/link5_part15.obj"/>
+    <mesh name="fr3v2_link6_part00" file="convex/link6_part00.obj"/>
+    <mesh name="fr3v2_link6_part01" file="convex/link6_part01.obj"/>
+    <mesh name="fr3v2_link6_part02" file="convex/link6_part02.obj"/>
+    <mesh name="fr3v2_link6_part03" file="convex/link6_part03.obj"/>
+    <mesh name="fr3v2_link6_part04" file="convex/link6_part04.obj"/>
+    <mesh name="fr3v2_link6_part05" file="convex/link6_part05.obj"/>
+    <mesh name="fr3v2_link6_part06" file="convex/link6_part06.obj"/>
+    <mesh name="fr3v2_link6_part07" file="convex/link6_part07.obj"/>
+    <mesh name="fr3v2_link6_part08" file="convex/link6_part08.obj"/>
+    <mesh name="fr3v2_link6_part09" file="convex/link6_part09.obj"/>
+    <mesh name="fr3v2_link6_part10" file="convex/link6_part10.obj"/>
+    <mesh name="fr3v2_link6_part11" file="convex/link6_part11.obj"/>
+    <mesh name="fr3v2_link6_part12" file="convex/link6_part12.obj"/>
+    <mesh name="fr3v2_link6_part13" file="convex/link6_part13.obj"/>
+    <mesh name="fr3v2_link6_part14" file="convex/link6_part14.obj"/>
+    <mesh name="fr3v2_link6_part15" file="convex/link6_part15.obj"/>
+    <mesh name="fr3v2_link7_part00" file="convex/link7_part00.obj"/>
+    <mesh name="fr3v2_link7_part01" file="convex/link7_part01.obj"/>
+    <mesh name="fr3v2_link7_part02" file="convex/link7_part02.obj"/>
+    <mesh name="fr3v2_link7_part03" file="convex/link7_part03.obj"/>
+    <mesh name="fr3v2_link7_part04" file="convex/link7_part04.obj"/>
+    <mesh name="fr3v2_link7_part05" file="convex/link7_part05.obj"/>
+    <mesh name="fr3v2_link7_part06" file="convex/link7_part06.obj"/>
+    <mesh name="fr3v2_link7_part07" file="convex/link7_part07.obj"/>
+    <mesh name="fr3v2_link7_part08" file="convex/link7_part08.obj"/>
+    <mesh name="fr3v2_link7_part09" file="convex/link7_part09.obj"/>
+    <mesh name="fr3v2_link7_part10" file="convex/link7_part10.obj"/>
+    <mesh name="fr3v2_link7_part11" file="convex/link7_part11.obj"/>
+    <mesh name="fr3v2_link7_part12" file="convex/link7_part12.obj"/>
+    <mesh name="fr3v2_link7_part13" file="convex/link7_part13.obj"/>
+    <mesh name="fr3v2_link7_part14" file="convex/link7_part14.obj"/>
+    <mesh name="fr3v2_link7_part15" file="convex/link7_part15.obj"/>
+  </asset>
+  <worldbody>
+    <light pos="0 0 2" dir="0 0 -1"/>
+    <geom name="floor" type="plane" size="3 3 0.05" material="floor" contype="1" conaffinity="1" friction="0.8 0.1 0.1"/>
+    <!-- World frame: RGB = XYZ -->
+    <geom name="world_x" class="frame_axis" fromto="0 0 0.01 0.12 0 0.01" rgba="1 0 0 1"/>
+    <geom name="world_y" class="frame_axis" fromto="0 0 0.01 0 0.12 0.01" rgba="0 1 0 1"/>
+    <geom name="world_z" class="frame_axis" fromto="0 0 0.01 0 0 0.13" rgba="0 0 1 1"/>
+    <!-- Stand proxy only; the arm base bodies below use measured calibration. -->
+    <body name="mount" pos="0 0 0.02">
+      <geom name="mount_collision" type="box" size="0.20 0.32 0.02" rgba="0.25 0.28 0.32 1" contype="1" conaffinity="1"/>
+    </body>
+    <!-- Calibrated remounted-workcell pose; MuJoCo intrinsic XYZ equivalent of the URDF RPY. -->
+    <body name="left_fr3v2_link0" pos="0.013079894 0.100675805 -0.005974552" euler="-0.7887354282 0.0090942400 0.0238750710">
+      <inertial pos="-0.017200 0.000400 0.074500" mass="2.396600" fullinertia="0.009000 0.011500 0.008500 0 0.002000 0"/>
+      <geom name="left_link0_visual" class="visual" mesh="fr3v2_link0" material="left_arm"/>
+      <geom name="left_link0_collision_00" class="collision" mesh="fr3v2_link0_part00"/>
+      <geom name="left_link0_collision_01" class="collision" mesh="fr3v2_link0_part01"/>
+      <geom name="left_link0_collision_02" class="collision" mesh="fr3v2_link0_part02"/>
+      <geom name="left_link0_collision_03" class="collision" mesh="fr3v2_link0_part03"/>
+      <geom name="left_link0_collision_04" class="collision" mesh="fr3v2_link0_part04"/>
+      <geom name="left_link0_collision_05" class="collision" mesh="fr3v2_link0_part05"/>
+      <geom name="left_link0_collision_06" class="collision" mesh="fr3v2_link0_part06"/>
+      <geom name="left_link0_collision_07" class="collision" mesh="fr3v2_link0_part07"/>
+      <geom name="left_link0_collision_08" class="collision" mesh="fr3v2_link0_part08"/>
+      <geom name="left_link0_collision_09" class="collision" mesh="fr3v2_link0_part09"/>
+      <geom name="left_link0_collision_10" class="collision" mesh="fr3v2_link0_part10"/>
+      <geom name="left_link0_collision_11" class="collision" mesh="fr3v2_link0_part11"/>
+      <geom name="left_link0_collision_12" class="collision" mesh="fr3v2_link0_part12"/>
+      <geom name="left_link0_collision_13" class="collision" mesh="fr3v2_link0_part13"/>
+      <geom name="left_link0_collision_14" class="collision" mesh="fr3v2_link0_part14"/>
+      <geom name="left_link0_collision_15" class="collision" mesh="fr3v2_link0_part15"/>
+      <body name="left_fr3v2_link1" pos="0 0 0.333">
+        <inertial pos="-0.004580 0.027016 -0.061800" mass="2.437700" fullinertia="0.023240 0.021460 0.005500 0.000333 -0.000676 0.003739"/>
+        <joint name="left_fr3v2_joint1" axis="0 0 1" armature="0.605721456" range="-2.9007400167 2.9007400167"/>
+        <geom name="left_link1_visual" class="visual" mesh="fr3v2_link1" material="left_arm"/>
+        <geom name="left_link1_collision_00" class="collision" mesh="fr3v2_link1_part00"/>
+        <geom name="left_link1_collision_01" class="collision" mesh="fr3v2_link1_part01"/>
+        <geom name="left_link1_collision_02" class="collision" mesh="fr3v2_link1_part02"/>
+        <geom name="left_link1_collision_03" class="collision" mesh="fr3v2_link1_part03"/>
+        <geom name="left_link1_collision_04" class="collision" mesh="fr3v2_link1_part04"/>
+        <geom name="left_link1_collision_05" class="collision" mesh="fr3v2_link1_part05"/>
+        <geom name="left_link1_collision_06" class="collision" mesh="fr3v2_link1_part06"/>
+        <geom name="left_link1_collision_07" class="collision" mesh="fr3v2_link1_part07"/>
+        <geom name="left_link1_collision_08" class="collision" mesh="fr3v2_link1_part08"/>
+        <geom name="left_link1_collision_09" class="collision" mesh="fr3v2_link1_part09"/>
+        <geom name="left_link1_collision_10" class="collision" mesh="fr3v2_link1_part10"/>
+        <geom name="left_link1_collision_11" class="collision" mesh="fr3v2_link1_part11"/>
+        <geom name="left_link1_collision_12" class="collision" mesh="fr3v2_link1_part12"/>
+        <geom name="left_link1_collision_13" class="collision" mesh="fr3v2_link1_part13"/>
+        <geom name="left_link1_collision_14" class="collision" mesh="fr3v2_link1_part14"/>
+        <geom name="left_link1_collision_15" class="collision" mesh="fr3v2_link1_part15"/>
+        <body name="left_fr3v2_link2" euler="-1.5707963268 0 0">
+          <inertial pos="0.004541 -0.180691 -0.010479" mass="2.237500" fullinertia="0.019026 0.005660 0.017114 0.001241 0.000499 -0.001804"/>
+          <joint name="left_fr3v2_joint2" axis="0 0 1" armature="0.605721456" range="-1.8360900167 1.8360900167"/>
+          <geom name="left_link2_visual" class="visual" mesh="fr3v2_link2" material="left_arm"/>
+          <geom name="left_link2_collision_00" class="collision" mesh="fr3v2_link2_part00"/>
+          <geom name="left_link2_collision_01" class="collision" mesh="fr3v2_link2_part01"/>
+          <geom name="left_link2_collision_02" class="collision" mesh="fr3v2_link2_part02"/>
+          <geom name="left_link2_collision_03" class="collision" mesh="fr3v2_link2_part03"/>
+          <geom name="left_link2_collision_04" class="collision" mesh="fr3v2_link2_part04"/>
+          <geom name="left_link2_collision_05" class="collision" mesh="fr3v2_link2_part05"/>
+          <geom name="left_link2_collision_06" class="collision" mesh="fr3v2_link2_part06"/>
+          <geom name="left_link2_collision_07" class="collision" mesh="fr3v2_link2_part07"/>
+          <geom name="left_link2_collision_08" class="collision" mesh="fr3v2_link2_part08"/>
+          <geom name="left_link2_collision_09" class="collision" mesh="fr3v2_link2_part09"/>
+          <geom name="left_link2_collision_10" class="collision" mesh="fr3v2_link2_part10"/>
+          <geom name="left_link2_collision_11" class="collision" mesh="fr3v2_link2_part11"/>
+          <geom name="left_link2_collision_12" class="collision" mesh="fr3v2_link2_part12"/>
+          <geom name="left_link2_collision_13" class="collision" mesh="fr3v2_link2_part13"/>
+          <geom name="left_link2_collision_14" class="collision" mesh="fr3v2_link2_part14"/>
+          <geom name="left_link2_collision_15" class="collision" mesh="fr3v2_link2_part15"/>
+          <body name="left_fr3v2_link3" pos="0 -0.316 0" euler="1.5707963268 0 0">
+            <inertial pos="0.082540 0.019082 0.042027" mass="2.193082" fullinertia="0.010225 0.012398 0.006877 0.001144 0.003497 0.002156"/>
+            <joint name="left_fr3v2_joint3" axis="0 0 1" armature="0.462474144" range="-2.9007400167 2.9007400167"/>
+            <geom name="left_link3_visual" class="visual" mesh="fr3v2_link3" material="left_arm"/>
+            <geom name="left_link3_collision_00" class="collision" mesh="fr3v2_link3_part00"/>
+            <geom name="left_link3_collision_01" class="collision" mesh="fr3v2_link3_part01"/>
+            <geom name="left_link3_collision_02" class="collision" mesh="fr3v2_link3_part02"/>
+            <geom name="left_link3_collision_03" class="collision" mesh="fr3v2_link3_part03"/>
+            <geom name="left_link3_collision_04" class="collision" mesh="fr3v2_link3_part04"/>
+            <geom name="left_link3_collision_05" class="collision" mesh="fr3v2_link3_part05"/>
+            <geom name="left_link3_collision_06" class="collision" mesh="fr3v2_link3_part06"/>
+            <geom name="left_link3_collision_07" class="collision" mesh="fr3v2_link3_part07"/>
+            <geom name="left_link3_collision_08" class="collision" mesh="fr3v2_link3_part08"/>
+            <geom name="left_link3_collision_09" class="collision" mesh="fr3v2_link3_part09"/>
+            <geom name="left_link3_collision_10" class="collision" mesh="fr3v2_link3_part10"/>
+            <geom name="left_link3_collision_11" class="collision" mesh="fr3v2_link3_part11"/>
+            <geom name="left_link3_collision_12" class="collision" mesh="fr3v2_link3_part12"/>
+            <geom name="left_link3_collision_13" class="collision" mesh="fr3v2_link3_part13"/>
+            <geom name="left_link3_collision_14" class="collision" mesh="fr3v2_link3_part14"/>
+            <geom name="left_link3_collision_15" class="collision" mesh="fr3v2_link3_part15"/>
+            <body name="left_fr3v2_link4" pos="0.0825 0 0" euler="1.5707963268 0 0">
+              <inertial pos="-0.087533 0.096335 0.010120" mass="2.181537" fullinertia="0.008878 0.007628 0.010295 -0.003749 0.001139 -0.000460"/>
+              <joint name="left_fr3v2_joint4" axis="0 0 1" armature="0.462474144" range="-3.0770200167 -0.1169370833"/>
+              <geom name="left_link4_visual" class="visual" mesh="fr3v2_link4" material="left_arm"/>
+              <geom name="left_link4_collision_00" class="collision" mesh="fr3v2_link4_part00"/>
+              <geom name="left_link4_collision_01" class="collision" mesh="fr3v2_link4_part01"/>
+              <geom name="left_link4_collision_02" class="collision" mesh="fr3v2_link4_part02"/>
+              <geom name="left_link4_collision_03" class="collision" mesh="fr3v2_link4_part03"/>
+              <geom name="left_link4_collision_04" class="collision" mesh="fr3v2_link4_part04"/>
+              <geom name="left_link4_collision_05" class="collision" mesh="fr3v2_link4_part05"/>
+              <geom name="left_link4_collision_06" class="collision" mesh="fr3v2_link4_part06"/>
+              <geom name="left_link4_collision_07" class="collision" mesh="fr3v2_link4_part07"/>
+              <geom name="left_link4_collision_08" class="collision" mesh="fr3v2_link4_part08"/>
+              <geom name="left_link4_collision_09" class="collision" mesh="fr3v2_link4_part09"/>
+              <geom name="left_link4_collision_10" class="collision" mesh="fr3v2_link4_part10"/>
+              <geom name="left_link4_collision_11" class="collision" mesh="fr3v2_link4_part11"/>
+              <geom name="left_link4_collision_12" class="collision" mesh="fr3v2_link4_part12"/>
+              <geom name="left_link4_collision_13" class="collision" mesh="fr3v2_link4_part13"/>
+              <geom name="left_link4_collision_14" class="collision" mesh="fr3v2_link4_part14"/>
+              <geom name="left_link4_collision_15" class="collision" mesh="fr3v2_link4_part15"/>
+              <body name="left_fr3v2_link5" pos="-0.0825 0.384 0" euler="-1.5707963268 0 0">
+                <inertial pos="0.008383 0.010180 -0.053265" mass="2.186881" fullinertia="0.031874 0.029674 0.004751 0.000134 -0.000265 -0.004734"/>
+                <joint name="left_fr3v2_joint5" axis="0 0 1" armature="0.205544064" range="-2.87630335 2.87630335"/>
+                <geom name="left_link5_visual" class="visual" mesh="fr3v2_link5" material="left_arm"/>
+                <geom name="left_link5_collision_00" class="collision" mesh="fr3v2_link5_part00"/>
+                <geom name="left_link5_collision_01" class="collision" mesh="fr3v2_link5_part01"/>
+                <geom name="left_link5_collision_02" class="collision" mesh="fr3v2_link5_part02"/>
+                <geom name="left_link5_collision_03" class="collision" mesh="fr3v2_link5_part03"/>
+                <geom name="left_link5_collision_04" class="collision" mesh="fr3v2_link5_part04"/>
+                <geom name="left_link5_collision_05" class="collision" mesh="fr3v2_link5_part05"/>
+                <geom name="left_link5_collision_06" class="collision" mesh="fr3v2_link5_part06"/>
+                <geom name="left_link5_collision_07" class="collision" mesh="fr3v2_link5_part07"/>
+                <geom name="left_link5_collision_08" class="collision" mesh="fr3v2_link5_part08"/>
+                <geom name="left_link5_collision_09" class="collision" mesh="fr3v2_link5_part09"/>
+                <geom name="left_link5_collision_10" class="collision" mesh="fr3v2_link5_part10"/>
+                <geom name="left_link5_collision_11" class="collision" mesh="fr3v2_link5_part11"/>
+                <geom name="left_link5_collision_12" class="collision" mesh="fr3v2_link5_part12"/>
+                <geom name="left_link5_collision_13" class="collision" mesh="fr3v2_link5_part13"/>
+                <geom name="left_link5_collision_14" class="collision" mesh="fr3v2_link5_part14"/>
+                <geom name="left_link5_collision_15" class="collision" mesh="fr3v2_link5_part15"/>
+                <body name="left_fr3v2_link6" euler="1.5707963268 0 0">
+                  <inertial pos="0.070391 -0.016074 -0.035025" mass="1.579681" fullinertia="0.002860 0.003910 0.004530 -0.000553 -0.000638 -0.000240"/>
+                  <joint name="left_fr3v2_joint6" axis="0 0 1" armature="0.205544064" range="0.43982265 4.62163335"/>
+                  <geom name="left_link6_visual" class="visual" mesh="fr3v2_link6" material="left_arm"/>
+                  <geom name="left_link6_collision_00" class="collision" mesh="fr3v2_link6_part00"/>
+                  <geom name="left_link6_collision_01" class="collision" mesh="fr3v2_link6_part01"/>
+                  <geom name="left_link6_collision_02" class="collision" mesh="fr3v2_link6_part02"/>
+                  <geom name="left_link6_collision_03" class="collision" mesh="fr3v2_link6_part03"/>
+                  <geom name="left_link6_collision_04" class="collision" mesh="fr3v2_link6_part04"/>
+                  <geom name="left_link6_collision_05" class="collision" mesh="fr3v2_link6_part05"/>
+                  <geom name="left_link6_collision_06" class="collision" mesh="fr3v2_link6_part06"/>
+                  <geom name="left_link6_collision_07" class="collision" mesh="fr3v2_link6_part07"/>
+                  <geom name="left_link6_collision_08" class="collision" mesh="fr3v2_link6_part08"/>
+                  <geom name="left_link6_collision_09" class="collision" mesh="fr3v2_link6_part09"/>
+                  <geom name="left_link6_collision_10" class="collision" mesh="fr3v2_link6_part10"/>
+                  <geom name="left_link6_collision_11" class="collision" mesh="fr3v2_link6_part11"/>
+                  <geom name="left_link6_collision_12" class="collision" mesh="fr3v2_link6_part12"/>
+                  <geom name="left_link6_collision_13" class="collision" mesh="fr3v2_link6_part13"/>
+                  <geom name="left_link6_collision_14" class="collision" mesh="fr3v2_link6_part14"/>
+                  <geom name="left_link6_collision_15" class="collision" mesh="fr3v2_link6_part15"/>
+                  <body name="left_fr3v2_link7" pos="0.088 0 0" euler="1.5707963268 0 0">
+                    <inertial pos="-0.009108 0.018151 0.064946" mass="0.694841" fullinertia="0.000899 0.001099 0.000702 0 -0.000013 -0.000022"/>
+                    <joint name="left_fr3v2_joint7" axis="0 0 1" armature="0.205544064" range="-3.05083335 3.05083335"/>
+                    <geom name="left_link7_visual" class="visual" mesh="fr3v2_link7" material="left_arm"/>
+                    <geom name="left_link7_collision_00" class="collision" mesh="fr3v2_link7_part00"/>
+                    <geom name="left_link7_collision_01" class="collision" mesh="fr3v2_link7_part01"/>
+                    <geom name="left_link7_collision_02" class="collision" mesh="fr3v2_link7_part02"/>
+                    <geom name="left_link7_collision_03" class="collision" mesh="fr3v2_link7_part03"/>
+                    <geom name="left_link7_collision_04" class="collision" mesh="fr3v2_link7_part04"/>
+                    <geom name="left_link7_collision_05" class="collision" mesh="fr3v2_link7_part05"/>
+                    <geom name="left_link7_collision_06" class="collision" mesh="fr3v2_link7_part06"/>
+                    <geom name="left_link7_collision_07" class="collision" mesh="fr3v2_link7_part07"/>
+                    <geom name="left_link7_collision_08" class="collision" mesh="fr3v2_link7_part08"/>
+                    <geom name="left_link7_collision_09" class="collision" mesh="fr3v2_link7_part09"/>
+                    <geom name="left_link7_collision_10" class="collision" mesh="fr3v2_link7_part10"/>
+                    <geom name="left_link7_collision_11" class="collision" mesh="fr3v2_link7_part11"/>
+                    <geom name="left_link7_collision_12" class="collision" mesh="fr3v2_link7_part12"/>
+                    <geom name="left_link7_collision_13" class="collision" mesh="fr3v2_link7_part13"/>
+                    <geom name="left_link7_collision_14" class="collision" mesh="fr3v2_link7_part14"/>
+                    <geom name="left_link7_collision_15" class="collision" mesh="fr3v2_link7_part15"/>
+                    <site name="left_ee" pos="0 0 0" size="0.025" rgba="0.2 0.6 1 1"/>
+                    <geom name="left_ee_x" class="frame_axis" fromto="0 0 0 0.08 0 0" rgba="1 0 0 1"/>
+                    <geom name="left_ee_y" class="frame_axis" fromto="0 0 0 0 0.08 0" rgba="0 1 0 1"/>
+                    <geom name="left_ee_z" class="frame_axis" fromto="0 0 0 0 0 0.08" rgba="0 0 1 1"/>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+    <!-- Calibrated remounted-workcell pose; MuJoCo intrinsic XYZ equivalent of the URDF RPY. -->
+    <body name="right_fr3v2_link0" pos="-0.013079894 -0.100675805 0.005974552" euler="0.7618707990 0.0202870659 -0.0336861590">
+      <inertial pos="-0.017200 0.000400 0.074500" mass="2.396600" fullinertia="0.009000 0.011500 0.008500 0 0.002000 0"/>
+      <geom name="right_link0_visual" class="visual" mesh="fr3v2_link0" material="right_arm"/>
+      <geom name="right_link0_collision_00" class="collision" mesh="fr3v2_link0_part00"/>
+      <geom name="right_link0_collision_01" class="collision" mesh="fr3v2_link0_part01"/>
+      <geom name="right_link0_collision_02" class="collision" mesh="fr3v2_link0_part02"/>
+      <geom name="right_link0_collision_03" class="collision" mesh="fr3v2_link0_part03"/>
+      <geom name="right_link0_collision_04" class="collision" mesh="fr3v2_link0_part04"/>
+      <geom name="right_link0_collision_05" class="collision" mesh="fr3v2_link0_part05"/>
+      <geom name="right_link0_collision_06" class="collision" mesh="fr3v2_link0_part06"/>
+      <geom name="right_link0_collision_07" class="collision" mesh="fr3v2_link0_part07"/>
+      <geom name="right_link0_collision_08" class="collision" mesh="fr3v2_link0_part08"/>
+      <geom name="right_link0_collision_09" class="collision" mesh="fr3v2_link0_part09"/>
+      <geom name="right_link0_collision_10" class="collision" mesh="fr3v2_link0_part10"/>
+      <geom name="right_link0_collision_11" class="collision" mesh="fr3v2_link0_part11"/>
+      <geom name="right_link0_collision_12" class="collision" mesh="fr3v2_link0_part12"/>
+      <geom name="right_link0_collision_13" class="collision" mesh="fr3v2_link0_part13"/>
+      <geom name="right_link0_collision_14" class="collision" mesh="fr3v2_link0_part14"/>
+      <geom name="right_link0_collision_15" class="collision" mesh="fr3v2_link0_part15"/>
+      <body name="right_fr3v2_link1" pos="0 0 0.333">
+        <inertial pos="-0.004580 0.027016 -0.061800" mass="2.437700" fullinertia="0.023240 0.021460 0.005500 0.000333 -0.000676 0.003739"/>
+        <joint name="right_fr3v2_joint1" axis="0 0 1" armature="0.605721456" range="-2.9007400167 2.9007400167"/>
+        <geom name="right_link1_visual" class="visual" mesh="fr3v2_link1" material="right_arm"/>
+        <geom name="right_link1_collision_00" class="collision" mesh="fr3v2_link1_part00"/>
+        <geom name="right_link1_collision_01" class="collision" mesh="fr3v2_link1_part01"/>
+        <geom name="right_link1_collision_02" class="collision" mesh="fr3v2_link1_part02"/>
+        <geom name="right_link1_collision_03" class="collision" mesh="fr3v2_link1_part03"/>
+        <geom name="right_link1_collision_04" class="collision" mesh="fr3v2_link1_part04"/>
+        <geom name="right_link1_collision_05" class="collision" mesh="fr3v2_link1_part05"/>
+        <geom name="right_link1_collision_06" class="collision" mesh="fr3v2_link1_part06"/>
+        <geom name="right_link1_collision_07" class="collision" mesh="fr3v2_link1_part07"/>
+        <geom name="right_link1_collision_08" class="collision" mesh="fr3v2_link1_part08"/>
+        <geom name="right_link1_collision_09" class="collision" mesh="fr3v2_link1_part09"/>
+        <geom name="right_link1_collision_10" class="collision" mesh="fr3v2_link1_part10"/>
+        <geom name="right_link1_collision_11" class="collision" mesh="fr3v2_link1_part11"/>
+        <geom name="right_link1_collision_12" class="collision" mesh="fr3v2_link1_part12"/>
+        <geom name="right_link1_collision_13" class="collision" mesh="fr3v2_link1_part13"/>
+        <geom name="right_link1_collision_14" class="collision" mesh="fr3v2_link1_part14"/>
+        <geom name="right_link1_collision_15" class="collision" mesh="fr3v2_link1_part15"/>
+        <body name="right_fr3v2_link2" euler="-1.5707963268 0 0">
+          <inertial pos="0.004541 -0.180691 -0.010479" mass="2.237500" fullinertia="0.019026 0.005660 0.017114 0.001241 0.000499 -0.001804"/>
+          <joint name="right_fr3v2_joint2" axis="0 0 1" armature="0.605721456" range="-1.8360900167 1.8360900167"/>
+          <geom name="right_link2_visual" class="visual" mesh="fr3v2_link2" material="right_arm"/>
+          <geom name="right_link2_collision_00" class="collision" mesh="fr3v2_link2_part00"/>
+          <geom name="right_link2_collision_01" class="collision" mesh="fr3v2_link2_part01"/>
+          <geom name="right_link2_collision_02" class="collision" mesh="fr3v2_link2_part02"/>
+          <geom name="right_link2_collision_03" class="collision" mesh="fr3v2_link2_part03"/>
+          <geom name="right_link2_collision_04" class="collision" mesh="fr3v2_link2_part04"/>
+          <geom name="right_link2_collision_05" class="collision" mesh="fr3v2_link2_part05"/>
+          <geom name="right_link2_collision_06" class="collision" mesh="fr3v2_link2_part06"/>
+          <geom name="right_link2_collision_07" class="collision" mesh="fr3v2_link2_part07"/>
+          <geom name="right_link2_collision_08" class="collision" mesh="fr3v2_link2_part08"/>
+          <geom name="right_link2_collision_09" class="collision" mesh="fr3v2_link2_part09"/>
+          <geom name="right_link2_collision_10" class="collision" mesh="fr3v2_link2_part10"/>
+          <geom name="right_link2_collision_11" class="collision" mesh="fr3v2_link2_part11"/>
+          <geom name="right_link2_collision_12" class="collision" mesh="fr3v2_link2_part12"/>
+          <geom name="right_link2_collision_13" class="collision" mesh="fr3v2_link2_part13"/>
+          <geom name="right_link2_collision_14" class="collision" mesh="fr3v2_link2_part14"/>
+          <geom name="right_link2_collision_15" class="collision" mesh="fr3v2_link2_part15"/>
+          <body name="right_fr3v2_link3" pos="0 -0.316 0" euler="1.5707963268 0 0">
+            <inertial pos="0.082540 0.019082 0.042027" mass="2.193082" fullinertia="0.010225 0.012398 0.006877 0.001144 0.003497 0.002156"/>
+            <joint name="right_fr3v2_joint3" axis="0 0 1" armature="0.462474144" range="-2.9007400167 2.9007400167"/>
+            <geom name="right_link3_visual" class="visual" mesh="fr3v2_link3" material="right_arm"/>
+            <geom name="right_link3_collision_00" class="collision" mesh="fr3v2_link3_part00"/>
+            <geom name="right_link3_collision_01" class="collision" mesh="fr3v2_link3_part01"/>
+            <geom name="right_link3_collision_02" class="collision" mesh="fr3v2_link3_part02"/>
+            <geom name="right_link3_collision_03" class="collision" mesh="fr3v2_link3_part03"/>
+            <geom name="right_link3_collision_04" class="collision" mesh="fr3v2_link3_part04"/>
+            <geom name="right_link3_collision_05" class="collision" mesh="fr3v2_link3_part05"/>
+            <geom name="right_link3_collision_06" class="collision" mesh="fr3v2_link3_part06"/>
+            <geom name="right_link3_collision_07" class="collision" mesh="fr3v2_link3_part07"/>
+            <geom name="right_link3_collision_08" class="collision" mesh="fr3v2_link3_part08"/>
+            <geom name="right_link3_collision_09" class="collision" mesh="fr3v2_link3_part09"/>
+            <geom name="right_link3_collision_10" class="collision" mesh="fr3v2_link3_part10"/>
+            <geom name="right_link3_collision_11" class="collision" mesh="fr3v2_link3_part11"/>
+            <geom name="right_link3_collision_12" class="collision" mesh="fr3v2_link3_part12"/>
+            <geom name="right_link3_collision_13" class="collision" mesh="fr3v2_link3_part13"/>
+            <geom name="right_link3_collision_14" class="collision" mesh="fr3v2_link3_part14"/>
+            <geom name="right_link3_collision_15" class="collision" mesh="fr3v2_link3_part15"/>
+            <body name="right_fr3v2_link4" pos="0.0825 0 0" euler="1.5707963268 0 0">
+              <inertial pos="-0.087533 0.096335 0.010120" mass="2.181537" fullinertia="0.008878 0.007628 0.010295 -0.003749 0.001139 -0.000460"/>
+              <joint name="right_fr3v2_joint4" axis="0 0 1" armature="0.462474144" range="-3.0770200167 -0.1169370833"/>
+              <geom name="right_link4_visual" class="visual" mesh="fr3v2_link4" material="right_arm"/>
+              <geom name="right_link4_collision_00" class="collision" mesh="fr3v2_link4_part00"/>
+              <geom name="right_link4_collision_01" class="collision" mesh="fr3v2_link4_part01"/>
+              <geom name="right_link4_collision_02" class="collision" mesh="fr3v2_link4_part02"/>
+              <geom name="right_link4_collision_03" class="collision" mesh="fr3v2_link4_part03"/>
+              <geom name="right_link4_collision_04" class="collision" mesh="fr3v2_link4_part04"/>
+              <geom name="right_link4_collision_05" class="collision" mesh="fr3v2_link4_part05"/>
+              <geom name="right_link4_collision_06" class="collision" mesh="fr3v2_link4_part06"/>
+              <geom name="right_link4_collision_07" class="collision" mesh="fr3v2_link4_part07"/>
+              <geom name="right_link4_collision_08" class="collision" mesh="fr3v2_link4_part08"/>
+              <geom name="right_link4_collision_09" class="collision" mesh="fr3v2_link4_part09"/>
+              <geom name="right_link4_collision_10" class="collision" mesh="fr3v2_link4_part10"/>
+              <geom name="right_link4_collision_11" class="collision" mesh="fr3v2_link4_part11"/>
+              <geom name="right_link4_collision_12" class="collision" mesh="fr3v2_link4_part12"/>
+              <geom name="right_link4_collision_13" class="collision" mesh="fr3v2_link4_part13"/>
+              <geom name="right_link4_collision_14" class="collision" mesh="fr3v2_link4_part14"/>
+              <geom name="right_link4_collision_15" class="collision" mesh="fr3v2_link4_part15"/>
+              <body name="right_fr3v2_link5" pos="-0.0825 0.384 0" euler="-1.5707963268 0 0">
+                <inertial pos="0.008383 0.010180 -0.053265" mass="2.186881" fullinertia="0.031874 0.029674 0.004751 0.000134 -0.000265 -0.004734"/>
+                <joint name="right_fr3v2_joint5" axis="0 0 1" armature="0.205544064" range="-2.87630335 2.87630335"/>
+                <geom name="right_link5_visual" class="visual" mesh="fr3v2_link5" material="right_arm"/>
+                <geom name="right_link5_collision_00" class="collision" mesh="fr3v2_link5_part00"/>
+                <geom name="right_link5_collision_01" class="collision" mesh="fr3v2_link5_part01"/>
+                <geom name="right_link5_collision_02" class="collision" mesh="fr3v2_link5_part02"/>
+                <geom name="right_link5_collision_03" class="collision" mesh="fr3v2_link5_part03"/>
+                <geom name="right_link5_collision_04" class="collision" mesh="fr3v2_link5_part04"/>
+                <geom name="right_link5_collision_05" class="collision" mesh="fr3v2_link5_part05"/>
+                <geom name="right_link5_collision_06" class="collision" mesh="fr3v2_link5_part06"/>
+                <geom name="right_link5_collision_07" class="collision" mesh="fr3v2_link5_part07"/>
+                <geom name="right_link5_collision_08" class="collision" mesh="fr3v2_link5_part08"/>
+                <geom name="right_link5_collision_09" class="collision" mesh="fr3v2_link5_part09"/>
+                <geom name="right_link5_collision_10" class="collision" mesh="fr3v2_link5_part10"/>
+                <geom name="right_link5_collision_11" class="collision" mesh="fr3v2_link5_part11"/>
+                <geom name="right_link5_collision_12" class="collision" mesh="fr3v2_link5_part12"/>
+                <geom name="right_link5_collision_13" class="collision" mesh="fr3v2_link5_part13"/>
+                <geom name="right_link5_collision_14" class="collision" mesh="fr3v2_link5_part14"/>
+                <geom name="right_link5_collision_15" class="collision" mesh="fr3v2_link5_part15"/>
+                <body name="right_fr3v2_link6" euler="1.5707963268 0 0">
+                  <inertial pos="0.070391 -0.016074 -0.035025" mass="1.579681" fullinertia="0.002860 0.003910 0.004530 -0.000553 -0.000638 -0.000240"/>
+                  <joint name="right_fr3v2_joint6" axis="0 0 1" armature="0.205544064" range="0.43982265 4.62163335"/>
+                  <geom name="right_link6_visual" class="visual" mesh="fr3v2_link6" material="right_arm"/>
+                  <geom name="right_link6_collision_00" class="collision" mesh="fr3v2_link6_part00"/>
+                  <geom name="right_link6_collision_01" class="collision" mesh="fr3v2_link6_part01"/>
+                  <geom name="right_link6_collision_02" class="collision" mesh="fr3v2_link6_part02"/>
+                  <geom name="right_link6_collision_03" class="collision" mesh="fr3v2_link6_part03"/>
+                  <geom name="right_link6_collision_04" class="collision" mesh="fr3v2_link6_part04"/>
+                  <geom name="right_link6_collision_05" class="collision" mesh="fr3v2_link6_part05"/>
+                  <geom name="right_link6_collision_06" class="collision" mesh="fr3v2_link6_part06"/>
+                  <geom name="right_link6_collision_07" class="collision" mesh="fr3v2_link6_part07"/>
+                  <geom name="right_link6_collision_08" class="collision" mesh="fr3v2_link6_part08"/>
+                  <geom name="right_link6_collision_09" class="collision" mesh="fr3v2_link6_part09"/>
+                  <geom name="right_link6_collision_10" class="collision" mesh="fr3v2_link6_part10"/>
+                  <geom name="right_link6_collision_11" class="collision" mesh="fr3v2_link6_part11"/>
+                  <geom name="right_link6_collision_12" class="collision" mesh="fr3v2_link6_part12"/>
+                  <geom name="right_link6_collision_13" class="collision" mesh="fr3v2_link6_part13"/>
+                  <geom name="right_link6_collision_14" class="collision" mesh="fr3v2_link6_part14"/>
+                  <geom name="right_link6_collision_15" class="collision" mesh="fr3v2_link6_part15"/>
+                  <body name="right_fr3v2_link7" pos="0.088 0 0" euler="1.5707963268 0 0">
+                    <inertial pos="-0.009108 0.018151 0.064946" mass="0.694841" fullinertia="0.000899 0.001099 0.000702 0 -0.000013 -0.000022"/>
+                    <joint name="right_fr3v2_joint7" axis="0 0 1" armature="0.205544064" range="-3.05083335 3.05083335"/>
+                    <geom name="right_link7_visual" class="visual" mesh="fr3v2_link7" material="right_arm"/>
+                    <geom name="right_link7_collision_00" class="collision" mesh="fr3v2_link7_part00"/>
+                    <geom name="right_link7_collision_01" class="collision" mesh="fr3v2_link7_part01"/>
+                    <geom name="right_link7_collision_02" class="collision" mesh="fr3v2_link7_part02"/>
+                    <geom name="right_link7_collision_03" class="collision" mesh="fr3v2_link7_part03"/>
+                    <geom name="right_link7_collision_04" class="collision" mesh="fr3v2_link7_part04"/>
+                    <geom name="right_link7_collision_05" class="collision" mesh="fr3v2_link7_part05"/>
+                    <geom name="right_link7_collision_06" class="collision" mesh="fr3v2_link7_part06"/>
+                    <geom name="right_link7_collision_07" class="collision" mesh="fr3v2_link7_part07"/>
+                    <geom name="right_link7_collision_08" class="collision" mesh="fr3v2_link7_part08"/>
+                    <geom name="right_link7_collision_09" class="collision" mesh="fr3v2_link7_part09"/>
+                    <geom name="right_link7_collision_10" class="collision" mesh="fr3v2_link7_part10"/>
+                    <geom name="right_link7_collision_11" class="collision" mesh="fr3v2_link7_part11"/>
+                    <geom name="right_link7_collision_12" class="collision" mesh="fr3v2_link7_part12"/>
+                    <geom name="right_link7_collision_13" class="collision" mesh="fr3v2_link7_part13"/>
+                    <geom name="right_link7_collision_14" class="collision" mesh="fr3v2_link7_part14"/>
+                    <geom name="right_link7_collision_15" class="collision" mesh="fr3v2_link7_part15"/>
+                    <site name="right_ee" pos="0 0 0" size="0.025" rgba="1 0.5 0.2 1"/>
+                    <geom name="right_ee_x" class="frame_axis" fromto="0 0 0 0.08 0 0" rgba="1 0 0 1"/>
+                    <geom name="right_ee_y" class="frame_axis" fromto="0 0 0 0 0.08 0" rgba="0 1 0 1"/>
+                    <geom name="right_ee_z" class="frame_axis" fromto="0 0 0 0 0 0.08" rgba="0 0 1 1"/>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+    <body name="left_target" mocap="true" pos="0 0 1">
+      <geom type="sphere" size="0.035" rgba="0.2 0.6 1 0.45" contype="0" conaffinity="0"/>
+      <geom name="left_target_x" class="frame_axis" fromto="0 0 0 0.08 0 0" rgba="1 0 0 1"/>
+      <geom name="left_target_y" class="frame_axis" fromto="0 0 0 0 0.08 0" rgba="0 1 0 1"/>
+      <geom name="left_target_z" class="frame_axis" fromto="0 0 0 0 0 0.08" rgba="0 0 1 1"/>
+    </body>
+    <body name="right_target" mocap="true" pos="0 0 1">
+      <geom type="sphere" size="0.035" rgba="1 0.5 0.2 0.45" contype="0" conaffinity="0"/>
+      <geom name="right_target_x" class="frame_axis" fromto="0 0 0 0.08 0 0" rgba="1 0 0 1"/>
+      <geom name="right_target_y" class="frame_axis" fromto="0 0 0 0 0.08 0" rgba="0 1 0 1"/>
+      <geom name="right_target_z" class="frame_axis" fromto="0 0 0 0 0 0.08" rgba="0 0 1 1"/>
+    </body>
+  </worldbody>
+  <contact>
+    <exclude body1="mount" body2="left_fr3v2_link0"/>
+    <exclude body1="mount" body2="right_fr3v2_link0"/>
+    <exclude body1="left_fr3v2_link0" body2="right_fr3v2_link0"/>
+    <exclude body1="left_fr3v2_link1" body2="right_fr3v2_link1"/>
+    <exclude body1="left_fr3v2_link1" body2="right_fr3v2_link2"/>
+    <exclude body1="left_fr3v2_link2" body2="right_fr3v2_link1"/>
+    <exclude body1="left_fr3v2_link2" body2="right_fr3v2_link2"/>
+    <exclude body1="left_fr3v2_link0" body2="left_fr3v2_link1"/>
+    <exclude body1="left_fr3v2_link1" body2="left_fr3v2_link2"/>
+    <exclude body1="left_fr3v2_link2" body2="left_fr3v2_link3"/>
+    <exclude body1="left_fr3v2_link3" body2="left_fr3v2_link4"/>
+    <exclude body1="left_fr3v2_link4" body2="left_fr3v2_link5"/>
+    <exclude body1="left_fr3v2_link5" body2="left_fr3v2_link6"/>
+    <exclude body1="left_fr3v2_link6" body2="left_fr3v2_link7"/>
+    <exclude body1="right_fr3v2_link0" body2="right_fr3v2_link1"/>
+    <exclude body1="right_fr3v2_link1" body2="right_fr3v2_link2"/>
+    <exclude body1="right_fr3v2_link2" body2="right_fr3v2_link3"/>
+    <exclude body1="right_fr3v2_link3" body2="right_fr3v2_link4"/>
+    <exclude body1="right_fr3v2_link4" body2="right_fr3v2_link5"/>
+    <exclude body1="right_fr3v2_link5" body2="right_fr3v2_link6"/>
+    <exclude body1="right_fr3v2_link6" body2="right_fr3v2_link7"/>
+  </contact>
+  <actuator>
+    <position name="left_a1" class="strong_actuator" joint="left_fr3v2_joint1" ctrlrange="-2.9007400167 2.9007400167"/>
+    <position name="left_a2" class="strong_actuator" joint="left_fr3v2_joint2" ctrlrange="-1.8360900167 1.8360900167"/>
+    <position name="left_a3" class="strong_actuator" joint="left_fr3v2_joint3" ctrlrange="-2.9007400167 2.9007400167"/>
+    <position name="left_a4" class="strong_actuator" joint="left_fr3v2_joint4" ctrlrange="-3.0770200167 -0.1169370833"/>
+    <position name="left_a5" class="wrist_actuator" joint="left_fr3v2_joint5" ctrlrange="-2.87630335 2.87630335"/>
+    <position name="left_a6" class="wrist_actuator" joint="left_fr3v2_joint6" ctrlrange="0.43982265 4.62163335"/>
+    <position name="left_a7" class="wrist_actuator" joint="left_fr3v2_joint7" ctrlrange="-3.05083335 3.05083335"/>
+    <position name="right_a1" class="strong_actuator" joint="right_fr3v2_joint1" ctrlrange="-2.9007400167 2.9007400167"/>
+    <position name="right_a2" class="strong_actuator" joint="right_fr3v2_joint2" ctrlrange="-1.8360900167 1.8360900167"/>
+    <position name="right_a3" class="strong_actuator" joint="right_fr3v2_joint3" ctrlrange="-2.9007400167 2.9007400167"/>
+    <position name="right_a4" class="strong_actuator" joint="right_fr3v2_joint4" ctrlrange="-3.0770200167 -0.1169370833"/>
+    <position name="right_a5" class="wrist_actuator" joint="right_fr3v2_joint5" ctrlrange="-2.87630335 2.87630335"/>
+    <position name="right_a6" class="wrist_actuator" joint="right_fr3v2_joint6" ctrlrange="0.43982265 4.62163335"/>
+    <position name="right_a7" class="wrist_actuator" joint="right_fr3v2_joint7" ctrlrange="-3.05083335 3.05083335"/>
+  </actuator>
+  <keyframe>
+    <!-- Keep synchronized with the measured hardware pose in config/initial_pose.yaml. -->
+    <key name="home" qpos="-0.161844238639 0.458310186863 0.109772421420 -1.494849562645 -0.448508501053 2.520832061768 1.250102043152 0.062438689172 0.403227508068 -0.139281243086 -1.593913912773 0.824155449867 2.101590156555 -1.331856608391"/>
+  </keyframe>
+</mujoco>

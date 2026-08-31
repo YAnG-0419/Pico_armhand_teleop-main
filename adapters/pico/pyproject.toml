@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pico-bimanual-franka-teleop"
+version = "0.1.0"
+description = "PICO 4 Ultra teleoperation for the mounted bimanual Franka FR3 setup"
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "mujoco==3.10.0",
+    "numpy>=2.0,<2.4",
+    "pin-pink==3.1.0",
+    "PyYAML>=6,<7",
+    "quadprog==0.1.13",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

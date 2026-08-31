@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>pico_teleop_bridge</name>
+  <version>0.1.0</version>
+  <description>UDP adapter from the PICO host runtime to source-neutral teleop commands.</description>
+  <maintainer email="descfly@example.com">descfly</maintainer>
+  <license>MIT</license>
+  <buildtool_depend>ament_python</buildtool_depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>teleop_core</exec_depend>
+  <exec_depend>teleop_interfaces</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>python3-yaml</exec_depend>
+  <export><build_type>ament_python</build_type></export>
+</package>

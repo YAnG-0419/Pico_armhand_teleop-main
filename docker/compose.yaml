@@ -1,0 +1,75 @@
+x-runtime: &runtime
+  image: pico-armhand-teleop:latest
+  network_mode: host
+  ipc: host
+  volumes:
+    - ..:/workspace/pico_armhand_teleop
+    - ${TELEOP_DATA_ROOT:?Missing TELEOP_DATA_ROOT in docker/.env}:/data
+  environment:
+    - ROS_LOCALHOST_ONLY=0
+    - ROS_DOMAIN_ID=${TELEOP_ROS_DOMAIN_ID:?Missing TELEOP_ROS_DOMAIN_ID in docker/.env}
+  working_dir: /workspace/pico_armhand_teleop
+
+services:
+  franka-control:
+    <<: *runtime
+    privileged: true
+    cpuset: ${FRANKA_CPUSET:?Missing FRANKA_CPUSET in docker/.env}
+    ulimits:
+      rtprio: 99
+      rttime: -1
+      memlock: -1
+    volumes:
+      - ..:/workspace/pico_armhand_teleop
+      - /dev:/dev
+    command:
+      - ros2
+      - launch
+      - franka_fr3_arm_controllers
+      - robot_control.launch.py
+      - robot_config:=${FRANKA_ROBOT_CONFIG:?Missing FRANKA_ROBOT_CONFIG in docker/.env}
+
+  fake-franka-control:
+    <<: *runtime
+    profiles: [fake]
+    privileged: true
+    cpuset: ${FRANKA_CPUSET:?Missing FRANKA_CPUSET in docker/.env}
+    ulimits:
+      rtprio: 99
+      rttime: -1
+      memlock: -1
+    volumes:
+      - ..:/workspace/pico_armhand_teleop
+      - /dev:/dev
+    command:
+      - ros2
+      - launch
+      - franka_fr3_arm_controllers
+      - robot_control.launch.py
+      - robot_config:=/workspace/pico_armhand_teleop/config/workcell/fake.yaml
+
+  teleop-control:
+    <<: *runtime
+    command:
+      - ros2
+      - launch
+      - teleop_core
+      - control.launch.py
+      - config:=/workspace/pico_armhand_teleop/config/modes/teleop_control.yaml
+
+  pico-bridge:
+    <<: *runtime
+    command:
+      - ros2
+      - launch
+      - pico_teleop_bridge
+      - pico.launch.py
+      - config:=/workspace/pico_armhand_teleop/config/modes/pico.yaml
+      - source_id:=pico
+
+  tools:
+    <<: *runtime
+    profiles: [tools]
+    stdin_open: true
+    tty: true
+    command: bash

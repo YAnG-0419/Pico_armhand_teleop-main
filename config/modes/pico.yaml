@@ -1,0 +1,63 @@
+udp:
+  command_host: 127.0.0.1
+  command_port: 5560
+  state_host: 127.0.0.1
+  state_port: 5561
+  state_timeout: 0.25
+
+host:
+  # Map operator displacement one-to-one onto the end effector.
+  translation_scale: 1.0
+  rotation_scale: 1.0
+  control_rate: 100.0
+  max_joint_speed: 0.5
+  robot_state_wait_timeout: 10.0
+
+input:
+  controllers:
+    grip_threshold: 0.9
+    # GUI Engage is the activation source. Set true to also require grip.
+    use_grip: false
+    ready_timeout: 30.0
+    stale_timeout: 0.25
+  motion_trackers:
+    serials:
+      left: PC2310MLL5060501G
+      right: PC2310MLL5290914G
+    ready_timeout: 30.0
+    stale_timeout: 0.25
+    frozen_timeout: 1.0
+    max_position_jump: 0.20
+    max_rotation_jump: 1.0
+    max_linear_speed: 3.0
+    max_angular_speed: 12.0
+    tracker_to_control:
+      left:
+        translation_xyz: [0.0, 0.0, 0.0]
+        quaternion_xyzw: [0.0, 0.0, 0.0, 1.0]
+      right:
+        translation_xyz: [0.0, 0.0, 0.0]
+        quaternion_xyzw: [0.0, 0.0, 0.0, 1.0]
+  hand_roots:
+    ready_timeout: 30.0
+    stale_timeout: 0.25
+    frozen_timeout: 1.0
+    # Per-changed-sample deltas, not speeds: the skeleton refreshes at ~52 Hz,
+    # so 0.20 m per step is far above any real hand motion but well below the
+    # 0.906 m whole-skeleton teleport measured in hand_coexistence.jsonl.
+    max_position_jump: 0.20
+    max_rotation_jump: 1.5
+    # Position EMA time constant in seconds. Replaying the 20260726_180408
+    # recording: 0.10 leaves 1.7 mm quiet 0.5-3 Hz wander at ~8 mm moving lag;
+    # 0.20 trades that to 1.4 mm wander at ~17 mm lag (lag scales with hand
+    # speed). Raise for smoother, laggier following.
+    smoothing_time_constant: 0.20
+    # Rotation uses a fixed 0.10 s time constant: slow == fast disables the
+    # error-adaptive schedule (the thresholds below are then inert, but both
+    # config validators require the keys). The adaptive attempt failed on
+    # hardware because its 0.015 rad low threshold sits under the measured
+    # 0.02-0.03 rad quiet noise floor, so noise kept switching it fast.
+    rotation_slow_time_constant: 0.10
+    rotation_fast_time_constant: 0.10
+    rotation_error_low: 0.015
+    rotation_error_high: 0.080
